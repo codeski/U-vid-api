@@ -5,6 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Video.destroy_all
+Category.destroy_all
+
 
 instruction = Category.create({name: "API Backend"})
 news = Category.create({name: "News"})

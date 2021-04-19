@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 2021_04_18_225445) do
     t.integer "category_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "likes"
+    t.integer "likes", default: 0
     t.index ["category_id"], name: "index_videos_on_category_id"
   end
 
