@@ -12,13 +12,16 @@ class CategoriesController < ApplicationController
     # end
 
     def create
-        byebug
+        # byebug
         category = Category.new(category_params)
-
-        render json: CategorySerializer.new(category)
+        if category.save
+            render json: CategorySerializer.new(category)
+        else
+            render json: {status: "error", code: 3000, message: "Something went wrong"}
+        end
     end
 
     def category_params
-        params.require(:categories).permit(:name)
+        params.require(:category).permit(:name)
     end
 end

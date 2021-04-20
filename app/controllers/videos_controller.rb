@@ -15,10 +15,13 @@ class VideosController < ApplicationController
     # end
 
     def create
-        byebug
-        category = Video.new(video_params)
-
-        render json: VideoSerializer.new(video)
+        # byebug
+        video = Video.new(video_params)
+        if video.save
+            render json: VideoSerializer.new(video)
+        else
+            render json: {status: "error", code: 3000, message: "Something went wrong"}
+        end
     end
 
     def video_params
