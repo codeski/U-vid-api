@@ -14,7 +14,6 @@ class VideosController < ApplicationController
     # end
 
     def create
-        # byebug
         video = Video.new(video_params)
         if video.save
             render json: VideoSerializer.new(video)
@@ -24,12 +23,18 @@ class VideosController < ApplicationController
     end
 
     def update 
-        video = Video.find_by(params[:id])
+        video = Video.find_by(id: params[:id])
         if video.update(video_params)
             render json: VideoSerializer.new(video)
         else
             render json: {status: "error", code: 3000, message: "Something went wrong"}
         end
+    end
+
+    def destroy
+        video = Video.find_by(id: params[:id])
+        video.destroy 
+        render json: {message: "Deleted on the backend"}
     end
 
     def video_params
