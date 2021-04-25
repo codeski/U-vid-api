@@ -7,12 +7,6 @@ class VideosController < ApplicationController
         render json: VideoSerializer.new(videos)
     end
 
-    # def show
-    #     video = Video.find_by(id: params[:id])
-
-    #     render json: VideoSerializer.new(video)
-    # end
-
     def create
         video = Video.new(video_params)
         if video.save
