@@ -27,6 +27,7 @@ class VideosController < ApplicationController
 
     def destroy
         video = Video.find_by(id: params[:id])
+        # byebug
         video.destroy 
         render json: {message: "Deleted on the backend"}
     end

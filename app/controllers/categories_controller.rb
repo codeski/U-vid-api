@@ -6,7 +6,6 @@ class CategoriesController < ApplicationController
     end
 
     def create
-        # byebug
         category = Category.new(category_params)
         if category.save
             render json: CategorySerializer.new(category)
@@ -26,6 +25,11 @@ class CategoriesController < ApplicationController
 
     def destroy
         category = Category.find_by(id: params[:id])
+        if category.videos
+            category.videos.each do |v|
+                v.destroy
+            end
+        end
         category.destroy 
         render json: {message: "Deleted on the backend"}
     end

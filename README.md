@@ -1,24 +1,29 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Description
+"U Videos" is a single page application written in OO JavaScript that stores all the videos you want to organize by category using a Rails API backend server. You will have full CRUD functionality of Videos and Categories without having to refresh the page.  
 
-Things you may want to cover:
+Video Demo - https://www.youtube.com/watch?v=AO90J3XP7iE
 
-* Ruby version
+## Install Instructions
+You will need to open the backend and frontend of the project which are two seperate repositories. 
 
-* System dependencies
+Copy and paste into your terminal
 
-* Configuration
+Rails API Backend:
+```
+git clone git@github.com:codeski/U-vid-api.git
+cd U-vid-api
+bundle install
+rails s
+```
+JavaScript/HTML/CSS Frontend: 
+```
+git@github.com:codeski/U-vid-frontend.git
+cd U-vid-api
+bundle install
+open index.html
+```
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Link to License
+[MIT](https://choosealicense.com/licenses/mit/)
