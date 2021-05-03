@@ -12,7 +12,7 @@ class VideosController < ApplicationController
         if video.save
             render json: VideoSerializer.new(video)
         else
-            render json: {status: "error", code: 3000, message: "Something went wrong"}
+            render json: {message: "Something went wrong"}
         end
     end
 
@@ -21,7 +21,7 @@ class VideosController < ApplicationController
         if video.update(video_params)
             render json: VideoSerializer.new(video)
         else
-            render json: {status: "error", code: 3000, message: "Something went wrong"}
+            render json: {message: "Something went wrong"}
         end
     end
 

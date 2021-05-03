@@ -10,7 +10,7 @@ class CategoriesController < ApplicationController
         if category.save
             render json: CategorySerializer.new(category)
         else
-            render json: {status: "error", code: 3000, message: "Something went wrong"}
+            render json: {message: "Something went wrong"}
         end
     end
 
@@ -19,7 +19,7 @@ class CategoriesController < ApplicationController
         if category.update(category_params)
             render json: CategorySerializer.new(category)
         else
-            render json: {status: "error", code: 3000, message: "Something went wrong"}
+            render json: {message: "Something went wrong"}
         end
     end
 
